@@ -1,0 +1,30 @@
+{
+  "name": "neutralui",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "build:ui": "turbo run build --filter=@ravelloh/neutral-ui",
+    "build:storybook": "turbo run build-storybook",
+    "dev": "turbo run dev",
+    "dev:ui": "turbo run dev --filter=@ravelloh/neutral-ui",
+    "dev:storybook": "turbo run storybook",
+    "lint": "turbo run lint",
+    "format": "prettier --write .",
+    "preview:storybook": "turbo run preview-storybook",
+    "clean": "turbo run clean",
+    "test": "turbo run test",
+    "publish": "cd packages/ui && npm publish --access public",
+    "storybook": "cd apps/storybook && pnpm dev",
+    "build-storybook": "cd apps/storybook && pnpm build",
+    "preview-storybook": "cd apps/storybook && pnpm preview"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.6",
+    "typescript": "5.9.2"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,26 @@
+# Development files
+.turbo/
+node_modules/
+.git/
+.gitignore
+
+# Config files
+eslint.config.mjs
+postcss.config.js
+tailwind.config.js
+tsconfig.json
+vite.config.ts
+
+# Build artifacts (but allow dist/)
+*.log
+*.tgz
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
