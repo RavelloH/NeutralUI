@@ -8,6 +8,7 @@ interface ButtonProps {
   appName: string;
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
+  onClick?: () => void;
 }
 
 export const Button = ({
@@ -16,6 +17,7 @@ export const Button = ({
   appName,
   variant = 'primary',
   size = 'md',
+  onClick,
 }: ButtonProps) => {
   const baseClasses =
     'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
@@ -35,7 +37,10 @@ export const Button = ({
   const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 
   return (
-    <button className={combinedClasses} onClick={() => alert(`Hello from your ${appName} app!`)}>
+    <button
+      className={combinedClasses}
+      onClick={onClick || (() => alert(`Hello from your ${appName} app!`))}
+    >
       {children}
     </button>
   );

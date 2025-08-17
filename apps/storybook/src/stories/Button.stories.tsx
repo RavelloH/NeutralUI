@@ -1,6 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../../../../packages/ui/src/button';
 
+// 模拟 fn 函数
+const fn = () => () => {
+  // 处理按钮点击事件
+  console.log('Button clicked!'); // eslint-disable-line no-console
+};
+
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
@@ -10,6 +16,18 @@ const meta: Meta<typeof Button> = {
       description: {
         component: 'A versatile button component with multiple variants and sizes.',
       },
+    },
+    backgrounds: {
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#0f172a' },
+        { name: 'blue', value: '#3b82f6' },
+      ],
+    },
+    a11y: {
+      element: '#storybook-root',
+      config: {},
+      options: {},
     },
   },
   tags: ['autodocs'],
@@ -32,9 +50,14 @@ const meta: Meta<typeof Button> = {
       control: { type: 'text' },
       description: 'Additional CSS classes',
     },
+    onClick: {
+      action: 'clicked',
+      description: 'Function called when the button is clicked',
+    },
   },
   args: {
     appName: 'Storybook',
+    onClick: fn(),
   },
 };
 

@@ -11,6 +11,16 @@ const meta: Meta<typeof Card> = {
         component: 'A clickable card component that displays title and content with hover effects.',
       },
     },
+    backgrounds: {
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#1e293b' },
+        { name: 'neutral', value: '#f8fafc' },
+      ],
+    },
+    viewport: {
+      defaultViewport: 'desktop',
+    },
   },
   tags: ['autodocs'],
   argTypes: {

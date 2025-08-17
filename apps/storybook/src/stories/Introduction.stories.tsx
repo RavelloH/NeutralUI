@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { within, expect } from '@storybook/test';
+import { within, expect } from 'storybook/test';
 
 // 简单的介绍组件
 const Introduction = () => (
@@ -55,6 +55,7 @@ const meta: Meta<typeof Introduction> = {
       },
     },
   },
+  tags: ['autodocs'],
 };
 
 export default meta;
